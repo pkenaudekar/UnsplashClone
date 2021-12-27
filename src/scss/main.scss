@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  margin: 0px 15px;
+}
+.L_F0b {
+  position: relative;
+}
+
+.HmGUP {
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  margin-top: -9px;
+  margin-bottom: 3px;
+}
+
+.S48vf {
+  margin-top: -8px;
+}
+
+.KHq0c {
+  margin-top: 4px;
+}
+
+.TB3Zf:after,
+.TB3Zf:before {
+  bottom: 0;
+  content: '';
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.vr {
+  content: '';
+  height: 40px;
+  margin-top: 4px;
+  width: 1px;
+}
