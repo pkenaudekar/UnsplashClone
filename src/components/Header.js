@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Nav, Button, Collapse, Card } from 'react-bootstrap';
 
 const Header = () => {
@@ -11,12 +12,14 @@ const Header = () => {
       <header className="py-3 border-bottom">
         <div className="d-flex flex-row align-items-center">
           <div className="d-flex flex-row w-50">
-            <img
-              src="logo/unsplash.png"
-              className="img-fluid"
-              alt="unsplash-logo"
-              width="39"
-            />
+            <Link to="/">
+              <img
+                src="logo/unsplash.png"
+                className="img-fluid"
+                alt="unsplash-logo"
+                width="39"
+              />
+            </Link>
             <button
               type="button"
               className="btn btn-outline-secondary"
@@ -375,27 +378,27 @@ const Header = () => {
 
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2 link-dark">
+              <Link to="/explore" className="nav-link px-2 link-dark">
                 Explore
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 link-dark">
+              <Link to="/advertise" className="nav-link px-2 link-dark">
                 Advertise
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 link-dark">
+              <Link to="/blog" className="nav-link px-2 link-dark">
                 Blog
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="vr"></div>
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2 link-dark">
-                Log in
-              </a>
+              <Link to="/login" className="nav-link px-2 link-dark">
+                Login
+              </Link>
             </li>
             <li>
               <Button variant="outline-secondary">Submit a photo</Button>
@@ -610,137 +613,137 @@ const Header = () => {
         <div className="d-flex flex-wrap dropend">
           <ul className="nav me-auto">
             <li className="nav-item KHq0c">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="nav-link link-dark px-2 active"
                 aria-current="page"
               >
                 Editorial
-              </a>
+              </Link>
             </li>
             <div className="vr"></div>
             <li className="nav-item KHq0c">
-              <a
+              <Link
+                to="/holidays"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <div className="d-flex flex-column">
                   <span className="HmGUP">Featured</span>
                   <span className="S48vf">Holidays</span>
                 </div>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/blockchain"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <div className="d-flex flex-column">
                   <span className="HmGUP">Featured</span>
                   <span className="S48vf">Blockchain</span>
                 </div>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/wallpapers"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf">Wallpapers</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/3d_renders"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">3D Renders</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/texture_patterns"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Texture & Patterns</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/architecture"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Architecture</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/experiment"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Experiment</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/nature"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Nature</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/business_work"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Buisness & Work</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/fashion"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Fashion</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/film"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Film</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c ">
+              <Link
+                to="/food_drink"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Food & Drink</span>
-              </a>
+              </Link>
             </li>
-            <li className="nav-item  KHq0c ">
-              <a
+            <li className="nav-item KHq0c">
+              <Link
+                to="/health_wellness"
+                className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
-                className="nav-link link-dark active p7ajO "
-                href="#"
               >
                 <span className="S48vf KHq0c">Health & Wellness</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
