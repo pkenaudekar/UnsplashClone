@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-.header {
-  margin: 0px 15px;
-}
 .L_F0b {
   position: relative;
 }
@@ -62,4 +59,71 @@
 
 .view-more-links-15 {
   margin-left: 15px;
+}
+
+.image-section {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.image-section-description {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue,
+    Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+  color: #fff;
+}
+
+.Fu4vG {
+  position: absolute;
+  font-size: 3.27vw;
+  line-height: 1.2;
+  font-weight: 700;
+  top: 40vh;
+  left: 30vw;
+}
+
+.o4ViM {
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  font-weight: 400;
+  font-size: 1.627vw;
+}
+
+.eIg8I {
+  position: absolute;
+  top: 55vh;
+  left: 30vw;
+  font-weight: 400;
+  font-size: 1.627vw;
+}
+
+.H4eZF {
+  top: 45vh;
+  left: 30vw;
+  text-decoration-skip-ink: auto;
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  color: #fff;
+  text-decoration: none;
+}
+
+.ujgWJ {
+  position: absolute;
+  bottom: 3vh;
+  left: 5vh;
+}
+
+.qDYfA {
+  margin-left: 20vw;
+  text-decoration-skip-ink: auto;
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  color: #fff;
+}
+
+.H4eZF:hover {
+  color: #fffc;
+}
+
+.result-section {
+  position: relative;
+  margin-bottom: 48px;
 }

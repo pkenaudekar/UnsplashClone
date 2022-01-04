@@ -8,8 +8,8 @@ const Header = () => {
   const [openVisualSearch, setOpenVisualSearch] = useState(false);
 
   return (
-    <div className="header">
-      <header className="py-3 border-bottom">
+    <div className="container-fluid sticky-top">
+      <header className="py-3 border-bottom bg-light">
         <div className="d-flex flex-row align-items-center">
           <div className="d-flex flex-row w-50">
             <Link to="/">

@@ -1,7 +1,7 @@
 import React from 'react';
 const Explore = () => {
   return (
-    <div>
+    <div className="container-fluid">
       <h1>Explore</h1>
     </div>
   );
