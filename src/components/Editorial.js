@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageCardList from './ImageCardList';
-import useImages from '../hooks/useImages';
+//import useImages from '../hooks/useImages';
 import unsplash from '../api/unsplash';
 const Editorial = () => {
   //const [selectedImage, setSelectedImage] = useState(null);
   const [images, setImages] = useState([]);
-  const [search, setSearch] = useState(null);
+  //const [search, setSearch] = useState(null);
+  const [pageNo, setPageNo] = useState(1);
   //const [images, search] = useImages('');
 
   useEffect(() => {
-    searchImage(search);
-  }, [search]);
+    searchImage();
+  }, [pageNo]);
 
-  const searchImage = async (term) => {
+  const searchImage = async () => {
     const response = await unsplash.get('/photos', {
-      params: { query: term, per_page: 12 },
+      params: { per_page: 30, page: pageNo },
     });
 
     setImages(response.data);
@@ -63,7 +64,12 @@ const Editorial = () => {
         </div>
       </div>
 
-      <div className="">
+      <div
+        className="row justify-content-center"
+        style={{
+          margin: '0vh 8.89vw',
+        }}
+      >
         <ImageCardList images={images} />
       </div>
     </div>
