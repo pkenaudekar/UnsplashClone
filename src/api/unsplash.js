@@ -1,5 +1,5 @@
 import axios from 'axios';
-const keys = require('../config/dev');
+const keys = require('../config/keys');
 
 export default axios.create({
   baseURL: 'https://api.unsplash.com',
