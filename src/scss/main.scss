@@ -127,3 +127,58 @@
   position: relative;
   margin-bottom: 48px;
 }
+
+.detail-section {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.detail-section-description {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue,
+    Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+  color: #fff;
+}
+
+.detail-section-left {
+  margin: 8vh 6.2vw;
+}
+
+.detail-header {
+  font-size: 3.125vw;
+  line-height: 1.2;
+  margin-bottom: '2.165vh';
+  font-weight: 700;
+  margin-top: '0vh';
+}
+
+.detail-content {
+  margin-bottom: 0vh;
+  margin-top: 0vh;
+  max-width: 40.36vw;
+  font-weight: 400;
+  font-size: 1.17vw;
+  line-height: 1.875vw;
+}
+
+.detail-section-right {
+  padding: 15px 20px;
+}
+
+.stats-section {
+  width: 24.041vw;
+  margin-left: 4vw;
+}
+
+.stats-section-card {
+  width: 24.041vw;
+  margin: 6vw 0vw 2vw 0vw;
+  font-size: 1.042vw;
+}
+
+.last-date {
+  color: #767676;
+  font-size: 0.78125vw;
+  text-align: center;
+  margin-trim: 10px;
+  margin-top: 10px;
+}

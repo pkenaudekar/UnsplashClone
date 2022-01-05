@@ -684,11 +684,11 @@ const Header = () => {
             </li>
             <li className="nav-item KHq0c">
               <Link
-                to="/experiment"
+                to="/experimental"
                 className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
               >
-                <span className="S48vf KHq0c">Experiment</span>
+                <span className="S48vf KHq0c">Experimental</span>
               </Link>
             </li>
             <li className="nav-item KHq0c">

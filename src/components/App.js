@@ -12,7 +12,7 @@ import Editorial from './Editorial';
 import Architecture from './Architecture';
 import Blockchain from './Blockchain';
 import BusinessWork from './BusinessWork';
-import Experiment from './Experiment';
+import Experimental from './Experimental';
 import Fashion from './Fashion';
 import Film from './Film';
 import FoodDrink from './FoodDrink';
@@ -36,7 +36,7 @@ const App = () => {
           <Route exact path="/architecture" element={<Architecture />} />
           <Route exact path="/blockchain" element={<Blockchain />} />
           <Route exact path="/business_work" element={<BusinessWork />} />
-          <Route exact path="/experiment" element={<Experiment />} />
+          <Route exact path="/experimental" element={<Experimental />} />
           <Route exact path="/fashion" element={<Fashion />} />
           <Route exact path="/film" element={<Film />} />
           <Route exact path="/food_drink" element={<FoodDrink />} />
