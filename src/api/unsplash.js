@@ -4,6 +4,6 @@ const keys = require('../config/keys');
 export default axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
-    Authorization: `Client-ID ${keys.accessKey}`,
+    Authorization: `Client-ID ${process.env.REACT_APP_ACCESS_KEY}`,
   },
 });
