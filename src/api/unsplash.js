@@ -1,5 +1,4 @@
 import axios from 'axios';
-const keys = require('../config/keys');
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 
 export default axios.create({
