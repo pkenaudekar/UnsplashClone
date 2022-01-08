@@ -1,26 +1,97 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import ImageCardList from './ImageCardList';
+
 //import useImages from '../hooks/useImages';
 import unsplash from '../api/unsplash';
+import fetchPhotos from '../utils/fetchPhotos';
+import fetchPhotosSearch from '../utils/fetchPhotosSearch';
+import { ContainerGrid } from './Grid.js';
+import { removeDulpicateImages } from '../utils/lib';
+import data from '../utils/data';
+import { useInfiniteScroll } from '../utils';
+import { ModalProvider } from './useModal.js';
 const Film = () => {
   //const [selectedImage, setSelectedImage] = useState(null);
   const [images, setImages] = useState([]);
   //const [search, setSearch] = useState(null);
   const [pageNo, setPageNo] = useState(1);
+  const [photosArray, setPhotosArray] = useState([]);
+  const [searchText, setSearchText] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const infiniteLoadRef = useRef(null);
+
   //const [images, search] = useImages('');
+  const photoEndpoint = '/topics/film/photos';
+  const searchEndpoint = '/search/photos';
 
+  const screenWidths = [
+    data.SCREEN_WIDTH_1COLUMN,
+    data.SCREEN_WIDTH_2COLUMNS,
+    data.SCREEN_WIDTH_3COLUMNS,
+  ];
+
+  const imageWidths = [
+    data.IMAGE_WIDTH_1COLUMN,
+    data.IMAGE_WIDTH_2COLUMNS,
+    data.IMAGE_WIDTH_3COLUMNS,
+  ];
+
+  let fetching = useRef(true);
   useEffect(() => {
-    searchImage();
-  }, [pageNo]);
+    const getPhotos = async (searchText) => {
+      let nextPhotos;
+      if (searchText === null) {
+        nextPhotos = await fetchPhotos(photoEndpoint, pageNo);
+      } else {
+        nextPhotos = await fetchPhotosSearch(
+          searchEndpoint,
+          pageNo,
+          searchText,
+          false
+        );
+      }
+      if (pageNo === 1) {
+        if (nextPhotos && nextPhotos.length === 0) {
+          setErrorMessage("Couldn't find any photos");
+          setPhotosArray([]);
+          setPhotosArray([]);
+        } else {
+          setErrorMessage(null);
+        }
+        setPhotosArray(nextPhotos);
+        window.scrollTo(0, 0);
+      } else {
+        setPhotosArray((prevPhotos) =>
+          removeDulpicateImages(prevPhotos, nextPhotos)
+        );
+      }
 
+      fetching.current = false;
+    };
+
+    getPhotos(searchText);
+  }, [pageNo, searchText]);
+
+  const updatePage = useCallback(() => {
+    if (!fetching.current) {
+      fetching.current = true;
+      setPageNo((prevPage) => {
+        return prevPage + 1;
+      });
+    }
+  }, []);
+
+  useInfiniteScroll(infiniteLoadRef, updatePage);
+  /*
   const searchImage = async () => {
-    const response = await unsplash.get('/topics/film/photos', {
+    const response = await unsplash.get('/topics/health/photos', {
       params: { per_page: 30, page: pageNo },
     });
 
     setImages(response.data);
   };
+*/
 
   return (
     <div className="container-fluid">
@@ -82,7 +153,7 @@ const Film = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-emoji-sunglasses"
+                        className="bi bi-emoji-sunglasses"
                         viewBox="0 0 16 16"
                       >
                         <path d="M4.968 9.75a.5.5 0 1 0-.866.5A4.498 4.498 0 0 0 8 12.5a4.5 4.5 0 0 0 3.898-2.25.5.5 0 1 0-.866-.5A3.498 3.498 0 0 1 8 11.5a3.498 3.498 0 0 1-3.032-1.75zM7 5.116V5a1 1 0 0 0-1-1H3.28a1 1 0 0 0-.97 1.243l.311 1.242A2 2 0 0 0 4.561 8H5a2 2 0 0 0 1.994-1.839A2.99 2.99 0 0 1 8 6c.393 0 .74.064 1.006.161A2 2 0 0 0 11 8h.438a2 2 0 0 0 1.94-1.515l.311-1.242A1 1 0 0 0 12.72 4H10a1 1 0 0 0-1 1v.116A4.22 4.22 0 0 0 8 5c-.35 0-.69.04-1 .116z" />
@@ -131,7 +202,7 @@ const Film = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-emoji-sunglasses-fill"
+                        className="bi bi-emoji-sunglasses-fill"
                         viewBox="0 0 16 16"
                       >
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v.116A4.22 4.22 0 0 1 8 5c.35 0 .69.04 1 .116V5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-1.994-1.839A2.99 2.99 0 0 0 8 6c-.393 0-.74.064-1.006.161A2 2 0 0 1 5 8h-.438a2 2 0 0 1-1.94-1.515L2.31 5.243zM4.969 9.75A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .866-.5z" />
@@ -141,7 +212,7 @@ const Film = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-emoji-wink-fill"
+                        className="bi bi-emoji-wink-fill"
                         viewBox="0 0 16 16"
                       >
                         <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM7 6.5C7 5.672 6.552 5 6 5s-1 .672-1 1.5S5.448 8 6 8s1-.672 1-1.5zM4.285 9.567a.5.5 0 0 0-.183.683A4.498 4.498 0 0 0 8 12.5a4.5 4.5 0 0 0 3.898-2.25.5.5 0 1 0-.866-.5A3.498 3.498 0 0 1 8 11.5a3.498 3.498 0 0 1-3.032-1.75.5.5 0 0 0-.683-.183zm5.152-3.31a.5.5 0 0 0-.874.486c.33.595.958 1.007 1.687 1.007.73 0 1.356-.412 1.687-1.007a.5.5 0 0 0-.874-.486.934.934 0 0 1-.813.493.934.934 0 0 1-.813-.493z" />
@@ -163,13 +234,21 @@ const Film = () => {
           </div>
         </div>
       </div>
-      <div
-        className="row justify-content-center"
-        style={{
-          margin: '0vh 8.89vw',
-        }}
-      >
-        <ImageCardList images={images} />
+      <div>
+        <div style={{ minHeight: 1600 }}>
+          <ModalProvider>
+            <ContainerGrid
+              photosArray={photosArray}
+              screenWidths={screenWidths}
+              imageWidths={imageWidths}
+              minColumns={1}
+              rowGap={data.ROW_GAP}
+              columnGap={data.COLUMN_GAP}
+            />
+          </ModalProvider>
+        </div>
+
+        <div style={{ height: 10 }} ref={infiniteLoadRef}></div>
       </div>
     </div>
   );

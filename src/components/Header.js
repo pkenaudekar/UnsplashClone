@@ -1,11 +1,29 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Button, Collapse, Card } from 'react-bootstrap';
-
+import { Route } from 'react-router-dom';
 const Header = () => {
   const [openLinks, setOpenLinks] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [openVisualSearch, setOpenVisualSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  let navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('searchTerm ', searchTerm);
+    navigate('/search', {
+      state: {
+        term: searchTerm,
+        pageNo: 1,
+      },
+    });
+  };
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <div className="container-fluid sticky-top">
@@ -321,13 +339,17 @@ const Header = () => {
             <form
               className="w-75 me-3"
               wtx-context="8509485A-56D4-4F62-977A-051479399CC4"
+              onSubmit={handleSubmit}
             >
               <input
+                name="search"
                 type="search"
                 className="form-control"
                 placeholder="Search free high-resolution photos"
                 aria-label="Search"
                 wtx-context="653F5E1F-609A-47DE-8319-1154725B2F23"
+                onChange={handleChange}
+                value={searchTerm}
               />
             </form>
             <button

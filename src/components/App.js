@@ -22,6 +22,7 @@ import Nature from './Nature';
 import TexturePatterns from './TexturePatterns';
 import ThreeDRenders from './ThreeDRenders';
 import Wallpapers from './Wallpapers';
+import SearchResult from './SearchResult';
 const App = () => {
   return (
     <div>
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/" element={<Editorial />} />
           <Route exact path="/explore" element={<Explore />} />
           <Route exact path="/advertise" element={<Advertise />} />
+          <Route exact path="/search" element={<SearchResult />} />
           <Route exact path="/blog" element={<Blog />} />
           <Route exact path="/login" element={<LogIn />} />
           <Route exact path="/architecture" element={<Architecture />} />
