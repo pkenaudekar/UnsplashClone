@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../scss/main.scss';
 
 import Header from './Header';
+import Footer from './Footer';
 import Explore from './Explore';
 import Advertise from './Advertise';
 import Blog from './Blog';
@@ -49,6 +50,7 @@ const App = () => {
           <Route exact path="/3d_renders" element={<ThreeDRenders />} />
           <Route exact path="/wallpapers" element={<Wallpapers />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

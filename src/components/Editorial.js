@@ -102,6 +102,8 @@ const Editorial = () => {
           src="images/photo-1639975721105-98fc58c37822.jpg"
           alt=""
           className="img-fluid"
+          width="100%"
+          height="auto"
         />
         <div className="image-section-description">
           <span className="Fu4vG">Unsplash</span>
