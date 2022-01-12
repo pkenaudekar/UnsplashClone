@@ -1,3 +1,4 @@
+/*
 import unsplash from '../api/unsplash';
 const fetchPhotosSearch = async (endpoint, pageNo, query, orderByLatest) => {
   const order = orderByLatest ? 'relevant' : 'relevant';
@@ -25,3 +26,4 @@ function textToQuery(string) {
 }
 
 export default fetchPhotosSearch;
+*/

@@ -1,3 +1,4 @@
+/*
 import unsplash from '../api/unsplash';
 
 const fetchPhotos = async (endpoint, pageNo) => {
@@ -13,3 +14,4 @@ const fetchPhotos = async (endpoint, pageNo) => {
 };
 
 export default fetchPhotos;
+*/

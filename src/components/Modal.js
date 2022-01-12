@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import ReactDOM from 'react-dom';
-
-import fetchPhotosSearch from '../utils/fetchPhotosSearch';
-import fetchPhotoTags from '../utils/fetchPhotoTags';
+import { fetchPhotosSearch, fetchPhotoTags } from '../utils/fetchData';
+import { connect } from 'react-redux';
+//import unsplash from '../api/unsplash';
+//import fetchPhotos from '../utils/fetchPhotos';
+//import fetchPhotosSearch from '../utils/fetchPhotosSearch';
 import { useState, useEffect, useRef } from 'react';
 import { ContainerGrid } from './Grid';
 import { CreditsHeader } from './Credits';
@@ -165,6 +167,7 @@ const Modal = ({ image, disableModal }) => {
         tagString = tagsToString(tags, true);
         //console.log('tagString ' + JSON.stringify(tagString));
         photos = await fetchPhotosSearch(endpoint, 1, tagString, true);
+
         //console.log('photos ' + JSON.stringify(photos));
       }
 

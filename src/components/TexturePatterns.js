@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-
-//import useImages from '../hooks/useImages';
-import unsplash from '../api/unsplash';
-import fetchPhotos from '../utils/fetchPhotos';
-import fetchPhotosSearch from '../utils/fetchPhotosSearch';
+import { fetchPhotos, fetchPhotosSearch } from '../actions';
+import { connect } from 'react-redux';
+//import unsplash from '../api/unsplash';
+//import fetchPhotos from '../utils/fetchPhotos';
+//import fetchPhotosSearch from '../utils/fetchPhotosSearch';
 import { ContainerGrid } from './Grid.js';
 import { removeDulpicateImages } from '../utils/lib';
 import data from '../utils/data';
 import { useInfiniteScroll } from '../utils';
 import { ModalProvider } from './useModal.js';
-const TexturePatterns = () => {
+const TexturePatterns = (props) => {
+  const { photos, searchPhotos } = props;
   //const [selectedImage, setSelectedImage] = useState(null);
   const [images, setImages] = useState([]);
   //const [search, setSearch] = useState(null);
@@ -20,7 +20,7 @@ const TexturePatterns = () => {
   const [photosArray, setPhotosArray] = useState([]);
   const [searchText, setSearchText] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
-
+  const [forceRender, setForceRender] = useState('true');
   const infiniteLoadRef = useRef(null);
 
   //const [images, search] = useImages('');
@@ -44,14 +44,13 @@ const TexturePatterns = () => {
     const getPhotos = async (searchText) => {
       let nextPhotos;
       if (searchText === null) {
-        nextPhotos = await fetchPhotos(photoEndpoint, pageNo);
+        //nextPhotos = await props.fetchPhotos(photoEndpoint, pageNo);
+        await props.fetchPhotos(photoEndpoint, pageNo);
+        nextPhotos = photos;
       } else {
-        nextPhotos = await fetchPhotosSearch(
-          searchEndpoint,
-          pageNo,
-          searchText,
-          false
-        );
+        //nextPhotos = await fetchPhotosSearch(searchEndpoint,pageNo,searchText,false);
+        await fetchPhotosSearch(searchEndpoint, pageNo, searchText, false);
+        nextPhotos = searchPhotos;
       }
       if (pageNo === 1) {
         if (nextPhotos && nextPhotos.length === 0) {
@@ -62,6 +61,8 @@ const TexturePatterns = () => {
           setErrorMessage(null);
         }
         setPhotosArray(nextPhotos);
+        setForceRender('false');
+        setPageNo(pageNo + 1);
         window.scrollTo(0, 0);
       } else {
         setPhotosArray((prevPhotos) =>
@@ -73,7 +74,7 @@ const TexturePatterns = () => {
     };
 
     getPhotos(searchText);
-  }, [pageNo, searchText]);
+  }, [pageNo, searchText, forceRender]);
 
   const updatePage = useCallback(() => {
     if (!fetching.current) {
@@ -255,4 +256,10 @@ const TexturePatterns = () => {
   );
 };
 
-export default TexturePatterns;
+const mapStateToProps = (state) => {
+  return { photos: state.photos, searchPhoto: state.searchPhoto };
+};
+
+export default connect(mapStateToProps, { fetchPhotos, fetchPhotosSearch })(
+  TexturePatterns
+);
