@@ -1,0 +1,114 @@
+// MEDIA QUERY MANAGER
+/*
+OREDER: base + typography > general layout + grid > page layout > components
+
+1em = 14px 
+Here em are prefered in media query over rem as they fail to work on some of the browsers and we use em/rem as over px as they 
+are not effected by root font-size settings of the browser.
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == max-width-412px {
+    // 412px
+    @media only screen and (max-width: 25.8em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-469px {
+    // 469px
+    @media only screen and (max-width: 29.357142857142858em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-571px {
+    // 571px
+    @media only screen and (max-width: 35.714285714285715em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-685px {
+    // 685px
+    @media only screen and (max-width: 42.857142857142854em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == max-width-787px {
+    // 787px
+    @media only screen and (max-width: 49.214285714285715em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-796px {
+    // 796px
+    @media only screen and (max-width: 49.785714285714285em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-841px {
+    // 841px
+    @media only screen and (max-width: 52.642857142857146em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-872px {
+    // 872px
+    @media only screen and (max-width: 54.57142857142857em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-912px {
+    // 912px
+    @media only screen and (max-width: 57em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-928px {
+    // 928px
+    @media only screen and (max-width: 58em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-982px {
+    // 982px
+    @media only screen and (max-width: 61.42857142857143em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-926px {
+    // 926px
+    @media only screen and (max-width: 64.28571428571429em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-1117px {
+    // 1117px
+    @media only screen and (max-width: 69.85714285714286em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-1208px {
+    // 1208px
+    @media only screen and (max-width: 75.57142857142857em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-1302px {
+    // 1302px
+    @media only screen and (max-width: 81.42857142857143em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-1371px {
+    // 1371px
+    @media only screen and (max-width: 85.71428571428571em) {
+      @content;
+    }
+  }
+  @if $breakpoint == max-width-above-1800px {
+    // 1800px
+    @media only screen and (min-width: 128.57142857142858em) {
+      @content;
+    }
+  }
+}

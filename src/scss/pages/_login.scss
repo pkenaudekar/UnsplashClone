@@ -1,0 +1,471 @@
+.login {
+  &-title {
+    //font-size: 28px;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0;
+
+    @include respond(max-width-1371px) {
+    }
+
+    // width < 1172px?
+    @include respond(max-width-1302px) {
+    }
+
+    // width < 1089px?
+    @include respond(max-width-1208px) {
+    }
+
+    // width < 1005px?
+    @include respond(max-width-1117px) {
+      //21.76
+      font-size: 2.2em;
+    }
+
+    // width < 884px?
+    @include respond(max-width-982px) {
+      font-size: 2.31em;
+    }
+
+    // width < 835px?
+    @include respond(max-width-928px) {
+      font-size: 2.36em;
+    }
+
+    // width < 820px?
+    @include respond(max-width-912px) {
+      font-size: 2.65em;
+    }
+
+    // width < 785px?
+    @include respond(max-width-872px) {
+      font-size: 2.8em;
+    }
+
+    // width < 757px?
+    @include respond(max-width-841px) {
+      font-size: 2.95em;
+    }
+
+    // width < 758px?
+    @include respond(max-width-796px) {
+      font-size: 2.96em;
+    }
+
+    // width < 708px?
+    @include respond(max-width-787px) {
+      font-size: 4.4em;
+    }
+
+    // width < 600px?
+    @include respond(max-width-685px) {
+      font-size: 5.3em;
+    }
+
+    // width < 513px?
+    @include respond(max-width-571px) {
+      font-size: 6.7em;
+    }
+
+    // width < 411px?
+    @include respond(max-width-469px) {
+      font-size: 8em;
+    }
+
+    // width < 371px?
+    @include respond(max-width-412px) {
+      font-size: 9em;
+    }
+  }
+
+  &-subtitle {
+    //font-size: 15px;
+    font-size: 1.08em;
+    font-weight: 400;
+    line-height: 1.6;
+
+    @include respond(max-width-1371px) {
+    }
+
+    // width < 1172px?
+    @include respond(max-width-1302px) {
+    }
+
+    // width < 1089px?
+    @include respond(max-width-1208px) {
+    }
+
+    // width < 1005px?
+    @include respond(max-width-1117px) {
+      font-size: 1.5em;
+    }
+
+    // width < 884px?
+    @include respond(max-width-982px) {
+      font-size: 1.58em;
+    }
+
+    // width < 835px?
+    @include respond(max-width-928px) {
+      font-size: 1.68em;
+    }
+
+    // width < 820px?
+    @include respond(max-width-912px) {
+      font-size: 1.82em;
+    }
+
+    // width < 785px?
+    @include respond(max-width-872px) {
+      font-size: 1.86em;
+    }
+
+    // width < 757px?
+    @include respond(max-width-841px) {
+      font-size: 2em;
+    }
+
+    // width < 758px?
+    @include respond(max-width-796px) {
+      font-size: 2.08em;
+    }
+
+    // width < 708px?
+    @include respond(max-width-787px) {
+      font-size: 2.93em;
+    }
+
+    // width < 600px?
+    @include respond(max-width-685px) {
+      font-size: 3.6em;
+    }
+
+    // width < 513px?
+    @include respond(max-width-571px) {
+      font-size: 4.4em;
+    }
+
+    // width < 411px?
+    @include respond(max-width-469px) {
+      font-size: 5.3em;
+    }
+
+    // width < 371px?
+    @include respond(max-width-412px) {
+      font-size: 5.5em;
+    }
+  }
+
+  &-logo {
+    top: 0px;
+    width: 4vw;
+
+    @include respond(max-width-1371px) {
+    }
+
+    // width < 1172px?
+    @include respond(max-width-1302px) {
+    }
+
+    // width < 1089px?
+    @include respond(max-width-1208px) {
+    }
+
+    // width < 1005px?
+    @include respond(max-width-1117px) {
+      //48.3
+      width: 4.31vw;
+      margin-top: 25px;
+    }
+
+    // width < 884px?
+    @include respond(max-width-982px) {
+      width: 4.9vw;
+      margin-top: 25px;
+    }
+
+    // width < 835px?
+    @include respond(max-width-928px) {
+      width: 5.2vw;
+      margin-top: 25px;
+    }
+
+    // width < 820px?
+    @include respond(max-width-912px) {
+      width: 5.3vw;
+      margin-top: 25px;
+    }
+
+    // width < 785px?
+    @include respond(max-width-872px) {
+      width: 5.5vw;
+      margin-top: 25px;
+    }
+
+    // width < 757px?
+    @include respond(max-width-841px) {
+      width: 5.5vw;
+      margin-top: 25px;
+    }
+
+    // width < 758px?
+    @include respond(max-width-796px) {
+      //46
+      width: 5.7vw;
+      margin-top: 25px;
+    }
+
+    // width < 708px?
+    @include respond(max-width-787px) {
+      width: 5.9vw;
+      margin-top: 25px;
+    }
+
+    // width < 600px?
+    @include respond(max-width-685px) {
+      width: 6.1vw;
+      margin-top: 25px;
+    }
+
+    // width < 513px?
+    @include respond(max-width-571px) {
+      width: 6.3vw;
+      margin-top: 25px;
+    }
+
+    // width < 411px?
+    @include respond(max-width-469px) {
+      width: 6.6vw;
+      margin-top: 25px;
+    }
+
+    // width < 371px?
+    @include respond(max-width-412px) {
+      width: 6.9vw;
+      margin-top: 25px;
+    }
+  }
+
+  &-icon {
+    width: 1.3vw;
+
+    @include respond(max-width-1371px) {
+    }
+
+    // width < 1172px?
+    @include respond(max-width-1302px) {
+    }
+
+    // width < 1089px?
+    @include respond(max-width-1208px) {
+    }
+
+    // width < 1005px?
+    @include respond(max-width-1117px) {
+      width: 1.4vw;
+    }
+
+    // width < 884px?
+    @include respond(max-width-982px) {
+      width: 1.5vw;
+    }
+
+    // width < 835px?
+    @include respond(max-width-928px) {
+      width: 1.51vw;
+    }
+
+    // width < 820px?
+    @include respond(max-width-912px) {
+      width: 1.56vw;
+    }
+
+    // width < 785px?
+    @include respond(max-width-872px) {
+      width: 1.58vw;
+    }
+
+    // width < 757px?
+    @include respond(max-width-841px) {
+      width: 1.61vw;
+    }
+
+    // width < 758px?
+    @include respond(max-width-796px) {
+      width: 1.62vw;
+    }
+
+    // width < 708px?
+    @include respond(max-width-787px) {
+      width: 1.63vw;
+    }
+
+    // width < 600px?
+    @include respond(max-width-685px) {
+      width: 1.65vw;
+    }
+
+    // width < 513px?
+    @include respond(max-width-571px) {
+      width: 1.67vw;
+    }
+
+    // width < 411px?
+    @include respond(max-width-469px) {
+      width: 1.9vw;
+    }
+
+    // width < 371px?
+    @include respond(max-width-412px) {
+      width: 2.2vw;
+    }
+  }
+}
+
+.form-separator {
+  height: 1px;
+  margin: 15px 0;
+}
+
+.AseRt {
+  @include respond(max-width-1371px) {
+  }
+
+  // width < 1172px?
+  @include respond(max-width-1302px) {
+  }
+
+  // width < 1089px?
+  @include respond(max-width-1208px) {
+  }
+
+  // width < 1005px?
+  @include respond(max-width-1117px) {
+    font-size: 1.3em;
+  }
+
+  // width < 884px?
+  @include respond(max-width-982px) {
+    font-size: 1.39em;
+  }
+
+  // width < 835px?
+  @include respond(max-width-928px) {
+    font-size: 1.43em;
+  }
+
+  // width < 820px?
+  @include respond(max-width-912px) {
+    font-size: 1.56em;
+  }
+
+  // width < 785px?
+  @include respond(max-width-872px) {
+    font-size: 1.65em;
+  }
+
+  // width < 757px?
+  @include respond(max-width-841px) {
+    font-size: 1.8em;
+  }
+
+  // width < 758px?
+  @include respond(max-width-796px) {
+    font-size: 1.6em;
+  }
+
+  // width < 708px?
+  @include respond(max-width-787px) {
+    font-size: 2.3em;
+  }
+
+  // width < 600px?
+  @include respond(max-width-685px) {
+    font-size: 2.5em;
+  }
+
+  // width < 513px?
+  @include respond(max-width-571px) {
+    font-size: 2.7em;
+  }
+
+  // width < 411px?
+  @include respond(max-width-469px) {
+    font-size: 4.6em;
+  }
+
+  // width < 371px?
+  @include respond(max-width-412px) {
+    font-size: 4.3em;
+  }
+}
+
+.wI2Er {
+  width: 28vw;
+
+  @include respond(max-width-1371px) {
+  }
+
+  // width < 1172px?
+  @include respond(max-width-1302px) {
+  }
+
+  // width < 1089px?
+  @include respond(max-width-1208px) {
+  }
+
+  // width < 1005px?
+  @include respond(max-width-1117px) {
+  }
+
+  // width < 884px?
+  @include respond(max-width-982px) {
+  }
+
+  // width < 835px?
+  @include respond(max-width-928px) {
+  }
+
+  // width < 820px?
+  @include respond(max-width-912px) {
+  }
+
+  // width < 785px?
+  @include respond(max-width-872px) {
+  }
+
+  // width < 757px?
+  @include respond(max-width-841px) {
+  }
+
+  // width < 758px?
+  @include respond(max-width-796px) {
+  }
+
+  // width < 708px?
+  @include respond(max-width-787px) {
+  }
+
+  // width < 600px?
+  @include respond(max-width-685px) {
+    width: 35vw;
+  }
+
+  // width < 513px?
+  @include respond(max-width-571px) {
+    width: 38vw;
+  }
+
+  // width < 411px?
+  @include respond(max-width-469px) {
+    width: 45vw;
+  }
+
+  // width < 371px?
+  @include respond(max-width-412px) {
+  }
+}
+
+.uTw23e {
+  font-size: 85%;
+}

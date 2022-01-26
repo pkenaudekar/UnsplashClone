@@ -1,0 +1,32 @@
+.detail{
+  &-section{
+    position: relative;
+    margin-bottom: 48px;
+
+    &-left{
+      margin: 8vh 6.2vw 8vh 12vw;
+    }
+
+    &-right {
+      padding: 15px 20px;
+    }
+  }
+
+  &-header{
+    font-size: 3.125vw;
+    line-height: 1.2;
+    margin-bottom: '2.165vh';
+    font-weight: 700;
+    margin-top: '0vh';
+  }
+
+  &-content{
+    margin-bottom: 0vh;
+    margin-top: 0vh;
+    max-width: 40.36vw;
+    font-weight: 400;
+    font-size: 1.17vw;
+    line-height: 1.875vw;
+  }
+}
+

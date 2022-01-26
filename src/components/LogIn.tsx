@@ -18,34 +18,36 @@ const LogIn = (): JSX.Element => {
     <div className="container-fluid">
       <div className="row justify-content-center">
         <div className="col-3"></div>
-        <div className="d-flex flex-column col-3 text-center my-3">
+        <div className="d-flex flex-column col-3 text-center my-3 wI2Er">
           <Link to="/">
             <img
               src="logo/unsplash.png"
-              className="img-fluid"
+              className="img-fluid login-logo"
               alt="unsplash-logo"
-              width="60vw"
             />
           </Link>
           <h1 className="login-title">Login</h1>
           <p className="login-subtitle">Welcome back.</p>
-          <button type="button" className="btn btn-primary btn-sm">
+          <button type="button" className="btn btn-primary btn-sm AseRt">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
               fill="currentColor"
-              className="bi bi-facebook"
+              className="bi bi-facebook login-icon"
               viewBox="0 0 16 16"
             >
               <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
             </svg>
             &nbsp;&nbsp;Login with Facebook
           </button>
-          <div className="form-separator my-3">
+          <div className="form-separator my-3 AseRt">
             <p>OR</p>
           </div>
-          <form action="/login" acceptCharset="UTF-8" method="post">
+          <form
+            action="/login"
+            acceptCharset="UTF-8"
+            method="post"
+            className="AseRt"
+          >
             <input name="utf8" type="hidden" value="✓" />
             <input
               type="hidden"
@@ -58,7 +60,7 @@ const LogIn = (): JSX.Element => {
                 <label htmlFor="user_email">Email address</label>
               </div>
               <input
-                className="form-control"
+                className="form-control uTw23e"
                 onChange={handleEmailChange}
                 value={email}
                 type="email"
@@ -76,7 +78,7 @@ const LogIn = (): JSX.Element => {
               </div>
 
               <input
-                className="form-control"
+                className="form-control uTw23e"
                 autoComplete="off"
                 type="password"
                 name="user[password]"
@@ -101,7 +103,7 @@ const LogIn = (): JSX.Element => {
             />
 
             <div className="d-flex flex-column form-group my-3">
-              <button type="button" className="btn btn-dark btn-sm">
+              <button type="button" className="btn btn-dark btn-sm uTw23e">
                 Login
               </button>
             </div>

@@ -1,0 +1,246 @@
+.footer-icons {
+  width: 24px;
+  height: 24px;
+
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+   
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    width: 23px;
+    height: 23px;
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    width: 23px;
+    height: 23px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    width: 23px;
+    height: 23px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    width: 22px;
+    height: 22px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    width: 22px;
+    height: 22px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    width: 21px;
+    height: 21px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    width: 21px;
+    height: 21px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-796px) {
+    width: 20px;
+    height: 20px;
+  }
+  // width < 781px?
+  @include respond(max-width-787px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    width: 19px;
+    height: 19px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    width: 19px;
+    height: 19px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    width: 18px;
+    height: 18px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.footer-logo{
+  width:39px;
+
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+    width: 36px;
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    width: 35px;
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    width: 35px;
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    width: 34px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    width: 34px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    width: 33px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    width: 33px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    width: 32px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    width: 32px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-796px) {
+    width: 31px;
+  }
+  // width < 781px?
+  @include respond(max-width-787px) {
+    width: 31px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    width: 30px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    width: 30px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    width: 29px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    width: 29px;
+  }
+}
+
+.footer-section{
+  padding: 3px 0px;
+}
+
+.copyright{
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+   
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    font-size: 10.88px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    font-size: 10.88px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    font-size: 10px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    font-size: 9.5px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    font-size: 9px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    font-size: 8.7px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-796px) {
+    font-size: 8.7px;
+  }
+  // width < 781px?
+  @include respond(max-width-787px) {
+    font-size: 8.6px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    font-size: 8.6px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    font-size: 8.5px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    font-size: 8.5px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    font-size: 8.4px;
+  }
+}

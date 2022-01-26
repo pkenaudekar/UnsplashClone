@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Button, Collapse, Card } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
@@ -28,30 +28,31 @@ const Header = (): JSX.Element => {
 
   return (
     <div className="container-fluid sticky-top">
-      <header className="py-3 border-bottom bg-light">
-        <div className="d-flex flex-row align-items-center">
+      <header className="border-bottom bg-light py-1">
+        <div className="d-flex flex-row align-items-center header-top-row ">
           <div className="d-flex flex-row w-50">
             <Link to="/">
               <img
                 src="logo/unsplash.png"
-                className="img-fluid"
+                className="img-fluid logo"
                 alt="unsplash-logo"
-                width="39"
               />
             </Link>
             <button
               type="button"
-              className="btn btn-outline-secondary"
-              onClick={() => setOpenSearch(!openSearch)}
+              className="btn btn-outline-secondary btn-left"
+              onClick={() => {
+                setOpenLinks(false);
+                setOpenSearch(!openSearch);
+                setOpenVisualSearch(false);
+              }}
               aria-controls="search-unsplash"
               aria-expanded={openSearch}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
                 fill="currentColor"
-                className="bi bi-search"
+                className="bi bi-search btn-left-svg"
                 viewBox="0 0 16 16"
               >
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
@@ -61,16 +62,7 @@ const Header = (): JSX.Element => {
             <div>
               <Collapse in={openSearch} dimension="height">
                 <div id="search-unsplash">
-                  <Card
-                    body
-                    style={{
-                      width: '50vw',
-                      zIndex: 3,
-                      position: 'absolute',
-                      left: '50px',
-                      top: '70px',
-                    }}
-                  >
+                  <Card body className="search-btn">
                     <div className="container">
                       <div className="search-unsplash-title">
                         <h5>Trending Searches</h5>
@@ -83,10 +75,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-graph-up-arrow"
+                              className="bi bi-graph-up-arrow container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -104,10 +94,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-graph-up-arrow"
+                              className="bi bi-graph-up-arrow container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -125,10 +113,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-graph-up-arrow"
+                              className="bi bi-graph-up-arrow container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -146,10 +132,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-graph-up-arrow"
+                              className="bi bi-graph-up-arrow container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -167,10 +151,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-graph-up-arrow"
+                              className="bi bi-graph-up-arrow container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -193,10 +175,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-image"
+                              className="bi bi-image container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -212,10 +192,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-stopwatch"
+                              className="bi bi-stopwatch container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
@@ -231,10 +209,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-palette"
+                              className="bi bi-palette container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
@@ -250,10 +226,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-house"
+                              className="bi bi-house container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path
@@ -275,10 +249,8 @@ const Header = (): JSX.Element => {
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
                               fill="currentColor"
-                              className="bi bi-funnel"
+                              className="bi bi-funnel container-svg"
                               viewBox="0 0 16 16"
                             >
                               <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z" />
@@ -355,18 +327,19 @@ const Header = (): JSX.Element => {
             </form>
             <button
               type="button"
-              className="btn btn-outline-secondary"
-              style={{ marginLeft: '-15px' }}
-              onClick={() => setOpenVisualSearch(!openVisualSearch)}
+              className="btn btn-outline-secondary btn-right"
+              onClick={() => {
+                setOpenLinks(false);
+                setOpenSearch(false);
+                setOpenVisualSearch(!openVisualSearch);
+              }}
               aria-controls="visual-search"
               aria-expanded={openVisualSearch}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
                 fill="currentColor"
-                className="bi bi-view-list"
+                className="bi bi-view-list btn-right-svg"
                 viewBox="0 0 16 16"
               >
                 <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"></path>
@@ -376,16 +349,7 @@ const Header = (): JSX.Element => {
             <div>
               <Collapse in={openVisualSearch} dimension="height">
                 <div id="visual-search">
-                  <Card
-                    body
-                    style={{
-                      width: '45vw',
-                      zIndex: 3,
-                      position: 'absolute',
-                      left: '380px',
-                      top: '70px',
-                    }}
-                  >
+                  <Card body className="search-image-btn">
                     <div
                       className="container"
                       style={{
@@ -398,237 +362,287 @@ const Header = (): JSX.Element => {
               </Collapse>
             </div>
           </div>
-
-          <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <Link to="/explore" className="nav-link px-2 link-dark">
-                Explore
-              </Link>
-            </li>
-            <li>
-              <Link to="/advertise" className="nav-link px-2 link-dark">
-                Advertise
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog" className="nav-link px-2 link-dark">
-                Blog
-              </Link>
-            </li>
-          </ul>
-          <div className="vr"></div>
-          <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <Link to="/login" className="nav-link px-2 link-dark">
-                Login
-              </Link>
-            </li>
-            <li>
-              <Button variant="outline-secondary">Submit a photo</Button>
-            </li>
-          </ul>
-          <div>
-            <Nav className="navbar navbar-dark">
-              <div className="container-fluid">
-                <Button
-                  onClick={() => setOpenLinks(!openLinks)}
-                  aria-controls="view-more-links"
-                  aria-expanded={openLinks}
-                  variant="outline-secondary"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    height="21"
-                    fill="currentColor"
-                    className="bi bi-list"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                    />
-                  </svg>
+          <div className="d-flex flex-row">
+            <ul className="nav col-12 col-md-auto my-1 ">
+              <li>
+                <Link to="/explore" className="nav-link px-2 link-dark">
+                  Explore
+                </Link>
+              </li>
+              <li>
+                <Link to="/advertise" className="nav-link px-2 link-dark">
+                  Advertise
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="nav-link px-2 link-dark">
+                  Blog
+                </Link>
+              </li>
+              <div className="vr"></div>
+              <li>
+                <Link to="/login" className="nav-link px-2 link-dark">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Button className="btn-submit my-1" variant="outline-secondary">
+                  Submit a photo
                 </Button>
-              </div>
-            </Nav>
-            <div>
-              <Collapse in={openLinks} dimension="height">
-                <div id="view-more-links">
-                  <Card
-                    body
-                    style={{
-                      width: '45vw',
-                      zIndex: 3,
-                      position: 'absolute',
-                      right: '45px',
-                    }}
-                  >
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-4">
-                          <div className="d-flex flex-row">
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="currentColor"
-                                className="bi bi-briefcase"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-                              </svg>
-                            </div>
-                            <div style={{ padding: '5px' }}>
-                              <h6>Company</h6>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-4">
-                          <div className="d-flex flex-row ">
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="currentColor"
-                                className="bi bi-grid"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
-                              </svg>
-                            </div>
-                            <div style={{ padding: '5px' }}>
-                              <h6>Product</h6>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-4">
-                          <div className="d-flex flex-row ">
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="currentColor"
-                                className="bi bi-person"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                              </svg>
-                            </div>
-                            <div style={{ padding: '5px' }}>
-                              <h6>Community</h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            About
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '15px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Developer/API
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Become a Contributor
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            History
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '15px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Unsplash Dataset
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Topics
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Join the Team
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '15px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Unsplash for iOS
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Collections
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Press
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '15px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Apps & Plugins
-                          </a>
-                        </div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Trends
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Contact Us
-                          </a>
-                        </div>
-                        <div
-                          className="col"
-                          style={{ marginLeft: '15px' }}
-                        ></div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Unsplash Awards
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row ">
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Help
-                          </a>
-                        </div>
-                        <div
-                          className="col"
-                          style={{ marginLeft: '15px' }}
-                        ></div>
-                        <div className="col" style={{ marginLeft: '20px' }}>
-                          <a href="#" className="nav-link px-2 link-dark">
-                            Stats
-                          </a>
-                        </div>
-                      </div>
+              </li>
+              <li>
+                <div>
+                  <Nav className="navbar navbar-dark py-0 my-1">
+                    <div className="container-fluid">
+                      <Button
+                        onClick={() => {
+                          setOpenLinks(!openLinks);
+                          setOpenSearch(false);
+                          setOpenVisualSearch(false);
+                        }}
+                        aria-controls="view-more-links"
+                        aria-expanded={openLinks}
+                        variant="outline-secondary"
+                        className="btn-menu"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="21"
+                          height="21"
+                          fill="currentColor"
+                          className="bi bi-list btn-menu-svg"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                          />
+                        </svg>
+                      </Button>
                     </div>
-                  </Card>
+                  </Nav>
+                  <div>
+                    <Collapse in={openLinks} dimension="height">
+                      <div id="view-more-links">
+                        <Card
+                          body
+                          style={{
+                            width: '45vw',
+                            zIndex: 3,
+                            position: 'absolute',
+                            right: '45px',
+                          }}
+                        >
+                          <div className="container">
+                            <div className="row">
+                              <div className="col-4">
+                                <div className="d-flex flex-row">
+                                  <div>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="currentColor"
+                                      className="bi bi-briefcase container-svg"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+                                    </svg>
+                                  </div>
+                                  <div style={{ padding: '5px' }}>
+                                    <h6>Company</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-4">
+                                <div className="d-flex flex-row ">
+                                  <div>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="currentColor"
+                                      className="bi bi-grid container-svg"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                                    </svg>
+                                  </div>
+                                  <div style={{ padding: '5px' }}>
+                                    <h6>Product</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-4">
+                                <div className="d-flex flex-row ">
+                                  <div>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="currentColor"
+                                      className="bi bi-person container-svg"
+                                      viewBox="0 0 16 16"
+                                    >
+                                      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                    </svg>
+                                  </div>
+                                  <div style={{ padding: '5px' }}>
+                                    <h6>Community</h6>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  About
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Developer/API
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Become a Contributor
+                                </a>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  History
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Unsplash Dataset
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Topics
+                                </a>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Join the Team
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Unsplash for iOS
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Collections
+                                </a>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Press
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Apps & Plugins
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Trends
+                                </a>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Contact Us
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              ></div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Unsplash Awards
+                                </a>
+                              </div>
+                            </div>
+                            <div className="row ">
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Help
+                                </a>
+                              </div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '15px' }}
+                              ></div>
+                              <div
+                                className="col"
+                                style={{ marginLeft: '20px' }}
+                              >
+                                <a href="#" className="nav-link px-2 link-dark">
+                                  Stats
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+                    </Collapse>
+                  </div>
                 </div>
-              </Collapse>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </header>
@@ -729,7 +743,7 @@ const Header = (): JSX.Element => {
                 className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
               >
-                <span className="S48vf KHq0c">Buisness & Work</span>
+                <span className="S48vf KHq0c">Business & Work</span>
               </Link>
             </li>
             <li className="nav-item KHq0c">

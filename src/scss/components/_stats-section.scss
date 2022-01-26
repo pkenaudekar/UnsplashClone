@@ -1,0 +1,29 @@
+.stats {
+  &-section {
+    width: 24.041vw;
+    margin-left: 4vw;
+
+    &-card {
+      width: 24.041vw;
+      margin: 6vw 0vw 2vw 0vw;
+      font-size: 1.042vw;
+    }
+  }
+
+  &-icons {
+    width: 1vw;
+    height: 1vw;
+  }
+
+  &-btn {
+    font-size: 0.9vw;
+  }
+}
+
+.last-date {
+  color: $color-grey-dark;
+  font-size: 0.78125vw;
+  text-align: center;
+  margin-trim: 10px;
+  margin-top: 10px;
+}

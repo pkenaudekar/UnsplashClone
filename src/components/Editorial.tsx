@@ -143,7 +143,7 @@ const Editorial = (props: EditorialProps): JSX.Element => {
           </h1>
           <p className="eIg8I">Powered by creators everywhere.</p>
           <div className="d-flex flex-row ujgWJ">
-            <div className="d-flex flex-row H4eZF">
+            <div className="d-flex flex-row H4eZF oPX6y">
               <Link
                 className="H4eZF"
                 title="View the photo by Stephen Leonardi"
@@ -152,11 +152,11 @@ const Editorial = (props: EditorialProps): JSX.Element => {
                 Photo of the Day
               </Link>
               &nbsp;by&nbsp;
-              <Link className="H4eZF" to="/@stephenleo1982">
+              <Link className="H4eZF " to="/@stephenleo1982">
                 Stephen Leonardi
               </Link>
             </div>
-            <div className="d-flex flex-row qDYfA">
+            <div className="d-flex flex-row qDYfA oPX6y">
               &nbsp;Read more about the&nbsp;
               <Link className="H4eZF" to="/license">
                 Unsplash License

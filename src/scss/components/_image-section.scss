@@ -1,0 +1,382 @@
+.image-section {
+  position: relative;
+  margin-bottom: 48px;
+
+  &-description {
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco,
+      Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
+      sans-serif;
+    color: $color-white;
+  }
+}
+
+.Fu4vG {
+  position: absolute;
+  font-size: 3.2857142857142856em; //46px
+  line-height: 1.2;
+  font-weight: 700;
+  top: 160px;
+  left: 30vw;
+
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+    top: 155px;
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    top: 150px;
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    top: 165px;
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    //top: 140px;
+    font-size: 3.69em;
+    top: 175px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    font-size: 3.9em;
+    top: 175px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    font-size: 4.05em;
+    top: 175px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    font-size: 4.45em;
+    top: 175px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    font-size: 4.6em;
+    top: 175px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    font-size: 4.9em;
+    top: 175px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-796px) {
+    font-size: 5em;
+    top: 175px;
+  }
+  // width < 781px?
+  @include respond(max-width-787px) {
+    font-size: 6em;
+    top: 185px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    font-size: 7.2em;
+    top: 155px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    font-size: 7.8em;
+    top: 115px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    font-size: 7.8em;
+    top: 105px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    font-size: 6.7em;
+    top: 90px;
+  }
+}
+
+.o4ViM {
+  position: absolute;
+  top: 240px;
+  left: 30vw;
+  font-weight: 400;
+  font-size: 1.2857142857142858em;
+
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+    top: 230px;
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    top: 225px;
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    top: 225px;
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    font-size: 1.45em;
+    top: 235px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    font-size: 1.52em;
+    top: 235px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    font-size: 1.58em;
+    top: 235px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    font-size: 1.76em;
+    top: 235px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    font-size: 1.83em;
+    top: 230px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    font-size: 1.95em;
+    top: 230px;
+  }
+
+  // width < 796px?
+  @include respond(max-width-796px) {
+    font-size: 1.99em;
+    top: 230px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-787px) {
+    font-size: 2.97em;
+    top: 230px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    font-size: 3.65em;
+    top: 205px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    font-size: 3.65em;
+    top: 160px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    font-size: 3.65em;
+    top: 145px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    font-size: 3.4em;
+    top: 120px;
+  }
+}
+
+.eIg8I {
+  position: absolute;
+  top: 265px;
+  left: 30vw;
+  font-weight: 400;
+  font-size: 1.2857142857142858em;
+
+  // width < 1371px?
+  @include respond(max-width-1371px) {
+    top: 250px;
+  }
+
+  // width < 1302px?
+  @include respond(max-width-1302px) {
+    top: 245px;
+  }
+
+  // width < 1208px?
+  @include respond(max-width-1208px) {
+    top: 240px;
+  }
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    font-size: 1.45em;
+    top: 250px;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    font-size: 1.52em;
+    top: 250px;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    font-size: 1.58em;
+    top: 252px;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    font-size: 1.76em;
+    top: 250px;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    font-size: 1.83em;
+    top: 245px;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    font-size: 1.95em;
+    top: 245px;
+  }
+
+  // width < 796px?
+  @include respond(max-width-796px) {
+    font-size: 1.99em;
+    top: 245px;
+  }
+
+  // width < 787px?
+  @include respond(max-width-787px) {
+    font-size: 2.97em;
+    top: 245px;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    font-size: 3.65em;
+    top: 220px;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    font-size: 3.65em;
+    top: 170px;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    font-size: 3.65em;
+    top: 155px;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    font-size: 3.4em;
+    top: 130px;
+  }
+}
+
+.ujgWJ {
+  position: absolute;
+  bottom: 3vh;
+  left: 2.5vw;
+}
+
+.H4eZF {
+  text-decoration-skip-ink: auto;
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  color: $color-white;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.qDYfA {
+  margin-left: 15vw;
+  text-decoration-skip-ink: auto;
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  color: $color-white;
+}
+
+.oPX6y {
+  font-size: 1.05em;
+
+  // width < 1117px?
+  @include respond(max-width-1117px) {
+    font-size: 1.2em;
+  }
+
+  // width < 982px?
+  @include respond(max-width-982px) {
+    font-size: 1.2em;
+  }
+
+  // width < 928px?
+  @include respond(max-width-928px) {
+    font-size: 1.25em;
+  }
+
+  // width < 912px?
+  @include respond(max-width-912px) {
+    font-size: 1.35em;
+  }
+
+  // width < 872px?
+  @include respond(max-width-872px) {
+    font-size: 1.4em;
+  }
+
+  // width < 841px?
+  @include respond(max-width-841px) {
+    font-size: 1.42em;
+  }
+
+  // width < 796px?
+  @include respond(max-width-796px) {
+    font-size: 1.42em;
+  }
+
+  // width < 787px?
+  @include respond(max-width-787px) {
+    font-size: 1.9em;
+  }
+
+  // width < 685px?
+  @include respond(max-width-685px) {
+    font-size: 2.1em;
+  }
+
+  // width < 571px?
+  @include respond(max-width-571px) {
+    font-size: 2.5em;
+  }
+
+  // width < 469px?
+  @include respond(max-width-469px) {
+    font-size: 2.5em;
+  }
+
+  // width < 412px?
+  @include respond(max-width-412px) {
+    font-size: 2.4em;
+  }
+}
