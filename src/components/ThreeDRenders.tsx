@@ -10,6 +10,7 @@ import data from '../utils/data';
 import { useInfiniteScroll } from '../utils';
 import { ModalProvider } from './useModal';
 import { StoreState } from '../reducers';
+import ErrorMessage from './ErrorMessage';
 import {
   Photos,
   PhotosSearch,
@@ -63,7 +64,7 @@ const ThreeDRenders = (props: ThreeDRendersProps): JSX.Element => {
   let fetching = useRef(true);
   useEffect(() => {
     const getPhotos = async (searchText?: string | null) => {
-      let nextPhotos: Photos[] | PhotosSearch[] | undefined;
+      let nextPhotos: any;
       if (searchText === null) {
         //nextPhotos = await props.fetchPhotos(photoEndpoint, pageNo);
         await props.fetchPhotos(photoEndpoint, pageNo);
@@ -80,7 +81,7 @@ const ThreeDRenders = (props: ThreeDRendersProps): JSX.Element => {
       }
       if (pageNo === 1) {
         if (nextPhotos && nextPhotos.length === 0) {
-          setErrorMessage("Couldn't find any photos");
+          setErrorMessage("Couldn't find any match");
           setPhotosArray([]);
           setPhotosArray([]);
         } else {
@@ -250,6 +251,7 @@ const ThreeDRenders = (props: ThreeDRendersProps): JSX.Element => {
         </div>
       </div>
       <div>
+        {errorMessage && <ErrorMessage message={errorMessage} />}
         <div style={{ minHeight: 1600 }}>
           <ModalProvider>
             <ContainerGrid

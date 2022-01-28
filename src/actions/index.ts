@@ -25,15 +25,40 @@ export interface Photos {
   topic_submissions: string[];
   user: string[];
 }
-
-export interface PhotosSearch {
+/*export interface PhotosSearch[] {
   photos?: string[];
   collections?: string[];
   users?: string[];
   related_searches?: string[];
   meta?: string[];
 }
-
+*/
+export interface PhotosSearch {
+  total?: number;
+  total_pages?: number;
+  results: {
+    id?: string;
+    created_at?: string;
+    updated_at?: string;
+    promoted_at?: string;
+    width?: number;
+    height?: number;
+    color?: string;
+    blur_hash?: string;
+    description?: string;
+    alt_description?: string;
+    urls?: string[];
+    links?: string[];
+    categories?: string[];
+    likes?: number;
+    liked_by_user?: boolean;
+    current_user_collections?: string[];
+    sponsorship?: string[];
+    topic_submissions?: string[];
+    user?: string[];
+    tags?: string[];
+  };
+}
 export interface Image {
   id?: string;
   created_at?: string;

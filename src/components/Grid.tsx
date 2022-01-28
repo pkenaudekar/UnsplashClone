@@ -11,7 +11,7 @@ import {
 import { Image as ImageRef } from '../actions';
 
 type ContainerGridProps = React.PropsWithChildren<{
-  photosArray: Photos[] | PhotosSearch[] | undefined;
+  photosArray: any;
   screenWidths: number[];
   imageWidths: number[];
   minColumns: number;
