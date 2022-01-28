@@ -1,0 +1,96 @@
+.error-msg {
+  width: 97vw;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: 300;
+
+  @include respond(max-width-1371px) {
+  }
+
+  // width < 1172px?
+  @include respond(max-width-1302px) {
+  }
+
+  // width < 1089px?
+  @include respond(max-width-1208px) {
+  }
+
+  // width < 1005px?
+  @include respond(max-width-1117px) {
+    font-size: 3em;
+    height: 8.5vh;
+  }
+
+  // width < 884px?
+  @include respond(max-width-982px) {
+    font-size: 3em;
+    height: 8.5vh;
+  }
+
+  // width < 835px?
+  @include respond(max-width-928px) {
+    font-size: 3em;
+    height: 8.5vh;
+  }
+
+  // width < 820px?
+  @include respond(max-width-912px) {
+    font-size: 3.2em;
+    height: 8vh;
+  }
+
+  // width < 785px?
+  @include respond(max-width-872px) {
+    font-size: 3.4em;
+    height: 8vh;
+  }
+
+  // width < 757px?
+  @include respond(max-width-841px) {
+    font-size: 3.4em;
+    height: 7vh;
+  }
+
+  // width < 758px?
+  @include respond(max-width-796px) {
+    font-size: 3.4em;
+    height: 6.5vh;
+  }
+
+  // width < 708px?
+  @include respond(max-width-787px) {
+    font-size: 4.5em;
+    height: 6.5vh;
+  }
+
+  // width < 600px?
+  @include respond(max-width-685px) {
+    font-size: 4.7em;
+    height: 6vh;
+    width: 95vw;
+  }
+
+  // width < 513px?
+  @include respond(max-width-571px) {
+    font-size: 5.3em;
+    height: 5vh;
+    width: 95vw;
+  }
+
+  // width < 411px?
+  @include respond(max-width-469px) {
+    font-size: 5.3em;
+    height: 4.5vh;
+    width: 95vw;
+  }
+
+  // width < 371px?
+  @include respond(max-width-412px) {
+    font-size: 5.3em;
+    height: 4vh;
+    width: 95vw;
+  }
+}

@@ -1,6 +1,7 @@
 .header-top-row {
   padding: 2px 0px;
 }
+
 .logo {
   width: 39px;
   padding: 0 2px;
@@ -907,103 +908,108 @@
   }
 }
 
-.container-svg {
-  width: 16px;
-  height: 16px;
+.container {
+  width: 45vw;
+  height: 45vh;
 
-  @include respond(max-width-1371px) {
-    width: 14px;
-    height: 14px;
-  }
+  &-svg {
+    width: 16px;
+    height: 16px;
 
-  // width < 1172px?
-  @include respond(max-width-1302px) {
-    width: 13px;
-    height: 13px;
-  }
+    @include respond(max-width-1371px) {
+      width: 14px;
+      height: 14px;
+    }
 
-  // width < 1089px?
-  @include respond(max-width-1208px) {
-    width: 12px;
-    height: 12px;
-  }
+    // width < 1172px?
+    @include respond(max-width-1302px) {
+      width: 13px;
+      height: 13px;
+    }
 
-  // width < 1005px?
-  @include respond(max-width-1117px) {
-    width: 12px;
-    height: 12px;
-  }
+    // width < 1089px?
+    @include respond(max-width-1208px) {
+      width: 12px;
+      height: 12px;
+    }
 
-  // width < 884px?
-  @include respond(max-width-982px) {
-    width: 11px;
-    height: 11px;
-  }
+    // width < 1005px?
+    @include respond(max-width-1117px) {
+      width: 12px;
+      height: 12px;
+    }
 
-  // width < 835px?
-  @include respond(max-width-928px) {
-    width: 10px;
-    height: 10px;
-  }
+    // width < 884px?
+    @include respond(max-width-982px) {
+      width: 11px;
+      height: 11px;
+    }
 
-  // width < 820px?
-  @include respond(max-width-912px) {
-    width: 9px;
-    height: 9px;
-  }
+    // width < 835px?
+    @include respond(max-width-928px) {
+      width: 10px;
+      height: 10px;
+    }
 
-  // width < 785px?
-  @include respond(max-width-872px) {
-    width: 8.5px;
-    height: 8.5px;
-  }
+    // width < 820px?
+    @include respond(max-width-912px) {
+      width: 9px;
+      height: 9px;
+    }
 
-  // width < 757px?
-  @include respond(max-width-841px) {
-    width: 8.2px;
-    height: 8.2px;
-  }
+    // width < 785px?
+    @include respond(max-width-872px) {
+      width: 8.5px;
+      height: 8.5px;
+    }
 
-  // width < 758px?
-  @include respond(max-width-796px) {
-    width: 8px;
-    height: 8px;
-  }
+    // width < 757px?
+    @include respond(max-width-841px) {
+      width: 8.2px;
+      height: 8.2px;
+    }
 
-  // width < 708px?
-  @include respond(max-width-787px) {
-    width: 8px;
-    height: 8px;
-  }
+    // width < 758px?
+    @include respond(max-width-796px) {
+      width: 8px;
+      height: 8px;
+    }
 
-  // width < 704px?
-  @include respond(max-width-787px) {
-    width: 7.5px;
-    height: 7.5px;
-  }
+    // width < 708px?
+    @include respond(max-width-787px) {
+      width: 8px;
+      height: 8px;
+    }
 
-  // width < 600px?
-  @include respond(max-width-685px) {
-    width: 6.8px;
-    height: 6.8px;
-  }
+    // width < 704px?
+    @include respond(max-width-787px) {
+      width: 7.5px;
+      height: 7.5px;
+    }
 
-  // width < 513px?
-  @include respond(max-width-571px) {
-    width: 5.3px;
-    height: 5.3px;
-  }
+    // width < 600px?
+    @include respond(max-width-685px) {
+      width: 6.8px;
+      height: 6.8px;
+    }
 
-  // width < 411px?
-  @include respond(max-width-469px) {
-    width: 4.1px;
-    height: 4.1px;
-  }
+    // width < 513px?
+    @include respond(max-width-571px) {
+      width: 5.3px;
+      height: 5.3px;
+    }
 
-  // width < 371px?
-  @include respond(max-width-412px) {
-    width: 3.7px;
-    height: 3.7px;
+    // width < 411px?
+    @include respond(max-width-469px) {
+      width: 4.1px;
+      height: 4.1px;
+    }
+
+    // width < 371px?
+    @include respond(max-width-412px) {
+      width: 3.7px;
+      height: 3.7px;
+    }
   }
 }
 
@@ -1244,7 +1250,7 @@
   z-index: 3;
   position: absolute;
   left: 3.1vw;
-  top: 9vh;
+  top: 8.3vh;
 
   @include respond(max-width-1371px) {
   }
@@ -1255,70 +1261,70 @@
 
   // width < 1089px?
   @include respond(max-width-1208px) {
-    top: 8.2vh;
+    top: 7.5vh;
   }
 
   // width < 1005px?
   @include respond(max-width-1117px) {
-    top: 7.5vh;
+    top: 6.8vh;
   }
 
   // width < 884px?
   @include respond(max-width-982px) {
-    top: 7vh;
+    top: 6.3vh;
   }
 
   // width < 835px?
   @include respond(max-width-928px) {
-    top: 6.7vh;
+    top: 6vh;
   }
 
   // width < 820px?
   @include respond(max-width-912px) {
-    top: 6.5vh;
+    top: 5.8vh;
   }
 
   // width < 785px?
   @include respond(max-width-872px) {
-    top: 6.1vh;
+    top: 5.4vh;
   }
 
   // width < 757px?
   @include respond(max-width-841px) {
-    top: 5.9vh;
+    top: 5.2vh;
   }
   // width < 758px?
   @include respond(max-width-796px) {
-    top: 5.5vh;
+    top: 4.8vh;
   }
 
   // width < 708px?
   @include respond(max-width-787px) {
-    top: 4.5vh;
+    top: 3.8vh;
     left: 2.8vw;
   }
 
   // width < 600px?
   @include respond(max-width-685px) {
-    top: 4.2vh;
+    top: 3.5vh;
     left: 2.5vw;
   }
 
   // width < 513px?
   @include respond(max-width-571px) {
-    top: 3.5vh;
+    top: 2.8vh;
     left: 2.8vw;
   }
 
   // width < 411px?
   @include respond(max-width-469px) {
-    top: 3vh;
+    top: 2.3vh;
     left: 2.8vw;
   }
 
   // width < 371px?
   @include respond(max-width-412px) {
-    top: 2.9vh;
+    top: 2.2vh;
     left: 2.8vw;
   }
 }
@@ -1328,67 +1334,69 @@
   z-index: 3;
   position: absolute;
   left: 20vw;
-  top: 70px;
+  top: 8.2vh;
 
   @include respond(max-width-1371px) {
+    top: 8.2vh;
   }
 
   // width < 1172px?
   @include respond(max-width-1302px) {
+    top: 7vh;
   }
 
   // width < 1089px?
   @include respond(max-width-1208px) {
-    top: 8.2vh;
+    top: 6.4vh;
   }
 
   // width < 1005px?
   @include respond(max-width-1117px) {
-    top: 7.5vh;
+    top: 5.7vh;
   }
 
   // width < 884px?
   @include respond(max-width-982px) {
-    top: 7vh;
+    top: 5.7vh;
   }
 
   // width < 835px?
   @include respond(max-width-928px) {
-    top: 6.7vh;
+    top: 5.4vh;
   }
 
   // width < 820px?
   @include respond(max-width-912px) {
-    top: 6.5vh;
+    top: 5.2vh;
   }
 
   // width < 785px?
   @include respond(max-width-872px) {
-    top: 6.1vh;
+    top: 4.9vh;
   }
 
   // width < 757px?
   @include respond(max-width-841px) {
-    top: 5.9vh;
+    top: 4.5vh;
   }
   // width < 758px?
   @include respond(max-width-796px) {
-    top: 5.5vh;
+    top: 4.8vh;
   }
 
   // width < 708px?
   @include respond(max-width-787px) {
-    top: 4.5vh;
+    top: 3.5vh;
   }
 
   // width < 600px?
   @include respond(max-width-685px) {
-    top: 4.2vh;
+    top: 2.7vh;
   }
 
   // width < 513px?
   @include respond(max-width-571px) {
-    top: 3.5vh;
+    top: 2.2vh;
   }
 
   // width < 411px?
@@ -1398,6 +1406,72 @@
 
   // width < 371px?
   @include respond(max-width-412px) {
-    top: 2.9vh;
+    top: 2.7vh;
   }
+}
+
+.menu-btn {
+  width: 45vw;
+  z-index: 3;
+  position: absolute;
+  right: 3vh;
+
+  /*
+  @include respond(max-width-1371px) {
+  }
+
+  // width < 1172px?
+  @include respond(max-width-1302px) {
+  }
+
+  // width < 1089px?
+  @include respond(max-width-1208px) {
+  }
+
+  // width < 1005px?
+  @include respond(max-width-1117px) {
+  }
+
+  // width < 884px?
+  @include respond(max-width-982px) {
+  }
+
+  // width < 835px?
+  @include respond(max-width-928px) {
+  }
+
+  // width < 820px?
+  @include respond(max-width-912px) {
+  }
+
+  // width < 785px?
+  @include respond(max-width-872px) {
+  }
+
+  // width < 757px?
+  @include respond(max-width-841px) {
+  }
+  // width < 758px?
+  @include respond(max-width-796px) {
+  }
+
+  // width < 708px?
+  @include respond(max-width-787px) {
+  }
+
+  // width < 600px?
+  @include respond(max-width-685px) {
+  }
+
+  // width < 513px?
+  @include respond(max-width-571px) {
+  }
+
+  // width < 411px?
+  @include respond(max-width-469px) {
+  }
+
+  // width < 371px?
+  @include respond(max-width-412px) {
+  }*/
 }

@@ -1,19 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Nav, Button, Collapse, Card } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+
+interface NavigateFunction {
+  (to: string, options?: { replace?: boolean; state?: any }): void;
+  (delta: number): void;
+}
+
 const Header = (): JSX.Element => {
   const [openLinks, setOpenLinks] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [openVisualSearch, setOpenVisualSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  let navigate = useNavigate();
+  let navigate: NavigateFunction = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<EventTarget>): void => {
     e.preventDefault();
-    console.log('searchTerm ', searchTerm);
+    //console.log('searchTerm ', searchTerm);
     navigate('/search', {
+      replace: true,
       state: {
         term: searchTerm,
         pageNo: 1,
@@ -350,13 +356,7 @@ const Header = (): JSX.Element => {
               <Collapse in={openVisualSearch} dimension="height">
                 <div id="visual-search">
                   <Card body className="search-image-btn">
-                    <div
-                      className="container"
-                      style={{
-                        width: '45vw',
-                        height: '45vh',
-                      }}
-                    ></div>
+                    <div className="container"></div>
                   </Card>
                 </div>
               </Collapse>
@@ -407,8 +407,6 @@ const Header = (): JSX.Element => {
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="21"
-                          height="21"
                           fill="currentColor"
                           className="bi bi-list btn-menu-svg"
                           viewBox="0 0 16 16"
@@ -424,15 +422,7 @@ const Header = (): JSX.Element => {
                   <div>
                     <Collapse in={openLinks} dimension="height">
                       <div id="view-more-links">
-                        <Card
-                          body
-                          style={{
-                            width: '45vw',
-                            zIndex: 3,
-                            position: 'absolute',
-                            right: '45px',
-                          }}
-                        >
+                        <Card body className="menu-btn">
                           <div className="container">
                             <div className="row">
                               <div className="col-4">
