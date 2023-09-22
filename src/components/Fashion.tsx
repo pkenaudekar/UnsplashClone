@@ -44,7 +44,7 @@ const Fashion = (props: FashionProps): JSX.Element => {
   const infiniteLoadRef = useRef(null);
 
   //const [images, search] = useImages('');
-  const photoEndpoint = '/topics/fashion/photos';
+  const photoEndpoint = '/topics/fashion-beauty/photos';
   const searchEndpoint = '/search/photos';
 
   const screenWidths = [
@@ -123,10 +123,12 @@ const Fashion = (props: FashionProps): JSX.Element => {
     <div className="container-fluid">
       <div className="d-flex flex-row detail-section">
         <div className="col detail-section-left">
-          <h1 className="detail-header">Fashion</h1>
+          <h1 className="detail-header">Fashion & Beauty</h1>
           <h2 className="detail-content">
-            From street-style shots to editorial photography — find the latest
-            trends in beauty and fashion.
+            In this category, photography becomes a canvas for artistic
+            expressions of fashion and beauty. Through expertly composed images,
+            photographers capture trends, styles, and personal statements,
+            transforming models into walking works of art.
           </h2>
         </div>
         <div className="col detail-section-right">

@@ -40,7 +40,7 @@ const Architecture = (props: ArchitectureProps): JSX.Element => {
   const infiniteLoadRef = useRef(null);
 
   //const [images, search] = useImages('');
-  const photoEndpoint = '/topics/architecture/photos';
+  const photoEndpoint = '/topics/architecture-interior/photos';
   const searchEndpoint = '/search/photos';
 
   const screenWidths = [
@@ -120,11 +120,13 @@ const Architecture = (props: ArchitectureProps): JSX.Element => {
     <div className="container-fluid">
       <div className="d-flex flex-row detail-section">
         <div className="col detail-section-left">
-          <h1 className="detail-header">Architecture</h1>
+          <h1 className="detail-header">Architecture & Interiors</h1>
           <h2 className="detail-content">
-            Explore exteriors from around the world — from brutalist buildings
-            to minimalist structures that will give you a new appreciation for
-            the art of architecture.
+            Celebrating the artistry of spaces, this category recognizes
+            exceptional photography that captures the essence of architectural
+            marvels and interior designs. From sweeping cityscapes to intimate
+            details, entrants showcase the beauty and functionality of built
+            environments.
           </h2>
         </div>
         <div className="col detail-section-right">

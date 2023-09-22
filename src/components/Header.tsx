@@ -706,7 +706,7 @@ const Header = (): JSX.Element => {
                 className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
               >
-                <span className="S48vf KHq0c">Architecture</span>
+                <span className="S48vf KHq0c">Architecture & Interiors</span>
               </Link>
             </li>
             <li className="nav-item KHq0c">
@@ -742,7 +742,7 @@ const Header = (): JSX.Element => {
                 className="nav-link link-dark px-2 active p7ajO"
                 aria-current="page"
               >
-                <span className="S48vf KHq0c">Fashion</span>
+                <span className="S48vf KHq0c">Fashion & Beauty</span>
               </Link>
             </li>
             <li className="nav-item KHq0c">
