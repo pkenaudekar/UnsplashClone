@@ -12,7 +12,7 @@ const ModalContext = createContext(null);
 type ModalProviderProps = React.PropsWithChildren<{}>;
 export const ModalProvider = ({ children }: ModalProviderProps) => {
   const [modalImage, setModalImage] = useState(null);
-  const showImage = useCallback((image) => {
+  const showImage = useCallback((image: any) => {
     setModalImage(image);
   }, []);
 

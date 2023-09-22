@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 export const useInfiniteScroll = (scrollRef: any, action: any) => {
   const observer = useCallback(
-    (node) => {
+    (node: any) => {
       /* eslint-disable */
       const ob = new IntersectionObserver(
         /*eslint-enable */
@@ -29,7 +29,7 @@ export const useImageLazyLoad = (): any => {
   const [visibleState, setVisibleState] = useState(false);
   const imageRef = useRef(null);
 
-  const observer = useCallback((node) => {
+  const observer = useCallback((node: any) => {
     const ob = new IntersectionObserver(
       (entries) => {
         entries.forEach((en) => {

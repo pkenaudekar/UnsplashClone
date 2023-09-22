@@ -17,10 +17,9 @@ const Footer = (): JSX.Element => {
               src="logo/unsplash.png"
               className="img-fluid footer-logo"
               alt="unsplash-logo"
-              
             />
           </Link>
-          <span className="text-muted copyright">© 2022 Unsplash</span>
+          <span className="text-muted copyright">© 2023 Unsplash</span>
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex ">
