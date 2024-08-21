@@ -133,6 +133,7 @@ const Editorial = (props: EditorialProps): JSX.Element => {
           width="100%"
           height="auto"
         />
+
         <div className="image-section-description">
           <span className="Fu4vG">Unsplash</span>
           <h1 className="o4ViM">
